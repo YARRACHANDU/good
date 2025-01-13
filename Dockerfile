@@ -1,4 +1,4 @@
-FROM maven:3.8.2-jdk-11 As build
+FROM maven:3.4.1-jdk-21 As build
 COPY . .
 RUN mvn clean package -DskipTests
 FROM openjdk:21-jdk-slim
