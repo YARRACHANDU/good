@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:21.0.1-jdk-slim
-COPY --from=build/target/login-page-0.0.1-SNAPSHOT.jar login-page.jar  
+COPY --from=build /target/login-page-0.0.1-SNAPSHOT.jar login-page.jar  
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","login-page.jar"]
